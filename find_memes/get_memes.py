@@ -23,7 +23,6 @@ def get_hot_memes(amount: int) -> list:
     memes = []
     submissions = sub.hot()
     memes_found = 0
-    print("AAAA")
     log_submissions_checked = 0
     while memes_found < amount:
         log_submissions_checked += 1
@@ -56,13 +55,6 @@ def get_images(submissions: list) -> list:
     for submission in submissions:
         url = submission.url
         cv_image = get_image(url)
-        # data = requests.get(url).content
-        # pil_image = Image.open(io.BytesIO(data)).convert('RGB')
-        # cv_image = numpy.array(pil_image)
-        # cv_image = cv2.cvtColor(cv_image, cv2.COLOR_RGB2BGR)
 
         images.append(cv_image)
     return images
-
-# cv2.imshow("Meme Viewer free trial", get_images(get_hot_submissions(1))[0])
-# cv2.waitKey(0)
