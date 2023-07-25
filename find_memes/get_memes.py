@@ -37,7 +37,7 @@ def get_hot_memes(amount: int) -> list:
                 if caption and not is_gibberish(caption):
                     memes_found += 1
                     print(f"{memes_found}/{amount}")
-                    memes.append(Meme(image, caption, submission.author.name))
+                    memes.append(Meme(image, caption, submission.author.name, submission.id))
     print(f"Memes grabbed. Submissions fetched: {log_submissions_checked} ")
     return memes
 
